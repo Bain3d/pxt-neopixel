@@ -2,25 +2,25 @@
  * Well known colors for a NeoPixel strip
  */
 enum NeoPixelColors {
-    //% block=red
+    //% block="红"
     Red = 0xFF0000,
-    //% block=orange
+    //% block="橙"
     Orange = 0xFFA500,
-    //% block=yellow
+    //% block="黄"
     Yellow = 0xFFFF00,
-    //% block=green
+    //% block="绿"
     Green = 0x00FF00,
-    //% block=blue
+    //% block="蓝"
     Blue = 0x0000FF,
-    //% block=indigo
+    //% block="靛蓝"
     Indigo = 0x4b0082,
-    //% block=violet
+    //% block="紫罗兰"
     Violet = 0x8a2be2,
-    //% block=purple
+    //% block="紫"
     Purple = 0xFF00FF,
-    //% block=white
+    //% block="白"
     White = 0xFFFFFF,
-    //% block=black
+    //% block="黑"
     Black = 0x000000
 }
 
@@ -28,11 +28,11 @@ enum NeoPixelColors {
  * Different modes for RGB or RGB+W NeoPixel strips
  */
 enum NeoPixelMode {
-    //% block="RGB (GRB format)"
+    //% block="RGB（GRB顺序）"
     RGB = 0,
     //% block="RGB+W"
     RGBW = 1,
-    //% block="RGB (RGB format)"
+    //% block="RGB（RGB顺序）"
     RGB_RGB = 2
 }
 
@@ -64,7 +64,7 @@ namespace neopixel {
          * Shows all LEDs to a given color (range 0-255 for r, g, b). 
          * @param rgb RGB color of the LED
          */
-        //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors" 
+        //% blockId="neopixel_set_strip_color" block="%strip|显示颜色%rgb=neopixel_colors" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
         showColor(rgb: number) {
@@ -78,7 +78,7 @@ namespace neopixel {
          * @param startHue the start hue value for the rainbow, eg: 1
          * @param endHue the end hue value for the rainbow, eg: 360
          */
-        //% blockId="neopixel_set_strip_rainbow" block="%strip|show rainbow from %startHue|to %endHue" 
+        //% blockId="neopixel_set_strip_rainbow" block="%strip|显示彩虹特效 （色相）从%startHue|到%endHue" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
         showRainbow(startHue: number = 1, endHue: number = 360) {
@@ -145,7 +145,7 @@ namespace neopixel {
          * @param high maximum value, eg: 255
          */
         //% weight=84
-        //% blockId=neopixel_show_bar_graph block="%strip|show bar graph of %value|up to %high" 
+        //% blockId=neopixel_show_bar_graph block="%strip|显示柱状图 值%value|最大值%high" 
         //% icon="\uf080"
         //% parts="neopixel"
         showBarGraph(value: number, high: number): void {
@@ -182,7 +182,7 @@ namespace neopixel {
          * @param pixeloffset position of the NeoPixel in the strip
          * @param rgb RGB color of the LED
          */
-        //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors" 
+        //% blockId="neopixel_set_pixel_color" block="%strip|设置颜色 像素%pixeloffset|为 %rgb=neopixel_colors" 
         //% blockGap=8
         //% weight=80
         //% parts="neopixel" advanced=true
@@ -196,7 +196,7 @@ namespace neopixel {
 	 * @param rotation type of matrix
 	 * @param chain type of matrix
          */
-        //% blockId=neopixel_set_matrix_width block="%strip|set matrix width %width|rotation %rotation|chain %chain"
+        //% blockId=neopixel_set_matrix_width block="%strip|设置矩阵宽度 %width|旋转 %rotation|链路 %chain"
         //% blockGap=8
         //% weight=5
         //% parts="neopixel" advanced=true
@@ -213,7 +213,7 @@ namespace neopixel {
          * @param y horizontal position
          * @param rgb RGB color of the LED
          */
-        //% blockId="neopixel_set_matrix_color" block="%strip|set matrix color at x %x|y %y|to %rgb=neopixel_colors" 
+        //% blockId="neopixel_set_matrix_color" block="%strip|设置矩阵像素 x %x|y %y|为 %rgb=neopixel_colors" 
         //% weight=4
         //% parts="neopixel" advanced=true
         setMatrixColor(x: number, y: number, rgb: number) {
@@ -247,7 +247,7 @@ namespace neopixel {
          * @param pixeloffset position of the LED in the strip
          * @param white brightness of the white LED
          */
-        //% blockId="neopixel_set_pixel_white" block="%strip|set pixel white LED at %pixeloffset|to %white" 
+        //% blockId="neopixel_set_pixel_white" block="%strip|设置白灯(RGB+W) 像素%pixeloffset|为 %white" 
         //% blockGap=8
         //% weight=80
         //% parts="neopixel" advanced=true
@@ -261,7 +261,7 @@ namespace neopixel {
         /**
          * Send all the changes to the strip.
          */
-        //% blockId="neopixel_show" block="%strip|show" blockGap=8
+        //% blockId="neopixel_show" block="%strip|刷新显示" blockGap=8
         //% weight=79
         //% parts="neopixel"
         show() {
@@ -272,7 +272,7 @@ namespace neopixel {
          * Turn off all LEDs.
          * You need to call ``show`` to make the changes visible.
          */
-        //% blockId="neopixel_clear" block="%strip|clear"
+        //% blockId="neopixel_clear" block="%strip|清除显示"
         //% weight=76
         //% parts="neopixel"
         clear(): void {
@@ -283,7 +283,7 @@ namespace neopixel {
         /**
          * Gets the number of pixels declared on the strip
          */
-        //% blockId="neopixel_length" block="%strip|length" blockGap=8
+        //% blockId="neopixel_length" block="%strip|LED的数目" blockGap=8
         //% weight=60 advanced=true
         length() {
             return this._length;
@@ -293,7 +293,7 @@ namespace neopixel {
          * Set the brightness of the strip. This flag only applies to future operation.
          * @param brightness a measure of LED brightness in 0-255. eg: 255
          */
-        //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" blockGap=8
+        //% blockId="neopixel_set_brightness" block="%strip|设置亮度为 %brightness" blockGap=8
         //% weight=59
         //% parts="neopixel" advanced=true
         setBrightness(brightness: number): void {
@@ -303,7 +303,7 @@ namespace neopixel {
         /**
          * Apply brightness to current colors using a quadratic easing function.
          **/
-        //% blockId="neopixel_each_brightness" block="%strip|ease brightness" blockGap=8
+        //% blockId="neopixel_each_brightness" block="%strip|减小亮度" blockGap=8
         //% weight=58
         //% parts="neopixel" advanced=true
         easeBrightness(): void {
@@ -334,7 +334,7 @@ namespace neopixel {
          * @param length number of LEDs in the range. eg: 4
          */
         //% weight=89
-        //% blockId="neopixel_range" block="%strip|range from %start|with %length|leds"
+        //% blockId="neopixel_range" block="%strip| 从像素%start|开始 长度%length|颗LED"
         //% parts="neopixel"
         //% blockSetVariable=range
         range(start: number, length: number): Strip {
@@ -356,7 +356,7 @@ namespace neopixel {
          * You need to call ``show`` to make the changes visible.
          * @param offset number of pixels to shift forward, eg: 1
          */
-        //% blockId="neopixel_shift" block="%strip|shift pixels by %offset" blockGap=8
+        //% blockId="neopixel_shift" block="%strip|移动像素 偏移量%offset" blockGap=8
         //% weight=40
         //% parts="neopixel"
         shift(offset: number = 1): void {
@@ -370,7 +370,7 @@ namespace neopixel {
          * You need to call ``show`` to make the changes visible.
          * @param offset number of pixels to rotate forward, eg: 1
          */
-        //% blockId="neopixel_rotate" block="%strip|rotate pixels by %offset" blockGap=8
+        //% blockId="neopixel_rotate" block="%strip|循环像素 偏移量%offset" blockGap=8
         //% weight=39
         //% parts="neopixel"
         rotate(offset: number = 1): void {
@@ -393,7 +393,7 @@ namespace neopixel {
         /**
          * Estimates the electrical current (mA) consumed by the current light configuration.
          */
-        //% weight=9 blockId=neopixel_power block="%strip|power (mA)"
+        //% weight=9 blockId=neopixel_power block="%strip| 电流(mA)"
         //% advanced=true
         power(): number {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
@@ -496,7 +496,7 @@ namespace neopixel {
      * @param pin the pin where the neopixel is connected.
      * @param numleds number of leds in the strip, eg: 24,30,60,64
      */
-    //% blockId="neopixel_create" block="NeoPixel at pin %pin|with %numleds|leds as %mode"
+    //% blockId="neopixel_create" block="引脚%pin|初始化灯带|%numleds|颗LED（模式%mode|）"
     //% weight=90 blockGap=8
     //% parts="neopixel"
     //% trackArgs=0,2
@@ -521,7 +521,7 @@ namespace neopixel {
      * @param blue value of the blue channel between 0 and 255. eg: 255
      */
     //% weight=1
-    //% blockId="neopixel_rgb" block="red %red|green %green|blue %blue"
+    //% blockId="neopixel_rgb" block="RGB（红%red|绿%green|蓝%blue|）"
     //% advanced=true
     export function rgb(red: number, green: number, blue: number): number {
         return packRGB(red, green, blue);
@@ -559,7 +559,7 @@ namespace neopixel {
      * @param s saturation from 0 to 99
      * @param l luminosity from 0 to 99
      */
-    //% blockId=neopixelHSL block="hue %h|saturation %s|luminosity %l"
+    //% blockId=neopixelHSL block="色相 %h|饱和度 %s|亮度 %l"
     export function hsl(h: number, s: number, l: number): number {
         h = Math.round(h);
         s = Math.round(s);
